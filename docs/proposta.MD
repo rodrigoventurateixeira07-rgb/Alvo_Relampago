@@ -1,286 +1,109 @@
 # Proposta Inicial do Jogo
 
-Este documento deve ser preenchido pelo grupo na Semana 1 do projeto.
+## Nome provisório do jogo
 
-A proposta deve apresentar uma ideia simples, clara e viável para ser desenvolvida com Python e Pygame dentro do prazo disponível.
+Alvo Relampago.
 
-## 1. Nome provisório do jogo
+## Integrantes do grupo
 
-Escreva aqui o nome provisório do jogo.
+Daniel Viana, Rodrigo, Luiz Moura e Mateus Andrade.
 
-Exemplo:
+## Tipo de jogo
 
-> Corrida dos Obstáculos
+Jogo de clique rapido.
 
-## 2. Integrantes do grupo
+## Descricao geral
 
-Liste os integrantes do grupo.
+O jogo Alvo Relampago sera um jogo simples desenvolvido em Python com a biblioteca Pygame. Nele, o jogador devera clicar rapidamente em alvos que aparecem em posicoes aleatorias na tela.
 
-- Nome 1:
-- Nome 2:
-- Nome 3:
-- Nome 4:
+A cada alvo acertado, o jogador ganha pontos. Caso o jogador clique fora do alvo, perde uma vida. O jogo tera um tempo limite e ficara progressivamente mais dificil em versoes futuras, podendo reduzir o tamanho do alvo ou aumentar a velocidade com que ele muda de posicao.
 
-## 3. Tipo de jogo
+A proposta e criar um jogo simples, funcional e jogavel, focando principalmente na organizacao do codigo, no uso dos conceitos estudados na disciplina e na implementacao correta das regras.
 
-Indique o tipo de jogo que será desenvolvido.
+## Objetivo do jogador
 
-Exemplos:
+O objetivo do jogador e acertar o maior numero possivel de alvos antes que o tempo acabe ou antes que suas vidas cheguem a zero.
 
-- jogo de desviar de obstáculos;
-- jogo de coleta de itens;
-- labirinto simples;
-- jogo de perguntas e respostas;
-- jogo de memória;
-- Pong;
-- Snake;
-- Breakout;
-- nave desviando de meteoros;
-- corrida simples com obstáculos;
-- jogo de clique rápido;
-- jogo de sobrevivência simples.
+Para vencer a partida, o jogador devera atingir uma pontuacao minima definida pelo grupo dentro do tempo disponivel. Exemplo: o jogador vence se fizer 30 pontos em ate 60 segundos.
 
-Tipo escolhido pelo grupo:
+## Regras principais
 
-> Escreva aqui.
+1. O jogador deve clicar nos alvos que aparecem na tela.
+2. Cada clique correto no alvo aumenta a pontuacao.
+3. Cada clique fora do alvo faz o jogador perder uma vida.
+4. O alvo aparece em posicoes aleatorias da tela.
+5. O jogo tera um tempo limite.
+6. O jogador comeca com uma quantidade fixa de vidas.
+7. A partida termina quando o jogador vence, perde todas as vidas ou quando o tempo acaba.
+8. O recorde do jogador podera ser salvo em um arquivo.
 
-## 4. Descrição geral do jogo
+## Condicao de vitoria
 
-Explique, em poucas linhas, como o jogo funcionará.
+O jogador vence se alcancar a pontuacao minima definida antes do tempo acabar e antes de perder todas as vidas.
 
-Procure responder:
+## Condicao de derrota ou encerramento
 
-- O que aparece na tela?
-- O que o jogador controla?
-- O que o jogador precisa fazer?
-- Quais desafios aparecem durante a partida?
+O jogador perde se suas vidas chegarem a zero antes de alcancar a pontuacao necessaria.
 
-Descrição:
+A partida tambem pode ser encerrada quando o tempo acabar. Nesse caso, se o jogador nao tiver alcancado a pontuacao minima, sera considerado derrota.
 
-> Escreva aqui.
+## Elementos previstos
 
-## 5. Objetivo do jogador
+- Janela principal do jogo.
+- Alvo clicavel.
+- Pontuacao atual.
+- Quantidade de vidas.
+- Tempo restante.
+- Mensagem de vitoria.
+- Mensagem de derrota.
+- Recorde salvo em arquivo.
+- Tela simples de inicio ou instrucoes.
+- Tela final com resultado da partida.
 
-Explique qual é o objetivo principal do jogador.
+## Controles previstos
 
-Exemplos:
+- Mouse: clique com o botao esquerdo para tentar acertar o alvo.
+- Tecla espaco: iniciar ou reiniciar a partida.
+- Tecla ESC: sair do jogo.
 
-- coletar o maior número possível de itens;
-- sobreviver pelo maior tempo possível;
-- chegar até o final do labirinto;
-- acertar alvos;
-- responder perguntas corretamente;
-- evitar obstáculos;
-- quebrar todos os blocos.
+## Estruturas de dados que poderao ser utilizadas
 
-Objetivo:
+Dicionarios serao usados para guardar informacoes do jogador, como pontuacao, vidas e recorde.
 
-> Escreva aqui.
+Tuplas serao usadas para representar posicoes, cores e tamanhos.
 
-## 6. Regras principais
+Listas poderao armazenar possiveis posicoes dos alvos ou eventos do jogo.
 
-Liste as principais regras do jogo.
+Variaveis serao usadas para controlar tempo, estado da partida e dificuldade.
 
-Exemplo:
+Funcoes serao utilizadas para organizar partes do jogo, como desenhar elementos, verificar clique, atualizar pontuacao e salvar recorde.
 
-- O jogador começa com 3 vidas.
-- Cada moeda coletada vale 10 pontos.
-- Cada colisão com obstáculo remove 1 vida.
-- A partida termina quando as vidas chegam a zero.
-- O jogador vence se alcançar 100 pontos.
+## Uso previsto de arquivos
 
-Regras do grupo:
+O jogo podera utilizar o arquivo `recorde.txt` para salvar a maior pontuacao alcancada pelo jogador.
 
-- Regra 1:
-- Regra 2:
-- Regra 3:
-- Regra 4:
-- Regra 5:
+Quando o jogo iniciar, o programa podera ler o recorde salvo. Ao final da partida, se o jogador fizer uma pontuacao maior, o novo recorde sera gravado no arquivo.
 
-## 7. Condição de vitória
+## Testes planejados
 
-Explique como o jogador vence ou conclui o jogo.
+1. Testar se o clique do mouse acertou ou nao o alvo.
+2. Testar se a pontuacao aumenta corretamente apos um acerto.
+3. Testar se o jogador perde vida ao clicar fora do alvo.
+4. Testar se a condicao de vitoria funciona corretamente.
+5. Testar se a condicao de derrota funciona corretamente.
+6. Testar se o recorde e salvo e carregado corretamente.
 
-Exemplos:
+## Principais dificuldades esperadas
 
-- atingir determinada pontuação;
-- chegar ao final da fase;
-- sobreviver até o tempo acabar;
-- responder uma quantidade mínima de perguntas;
-- quebrar todos os blocos.
+1. Organizar o codigo em funcoes de forma clara.
+2. Controlar corretamente o tempo da partida.
+3. Fazer o alvo aparecer em posicoes aleatorias sem sair da tela.
+4. Verificar corretamente se o clique do mouse acertou o alvo.
+5. Salvar e carregar o recorde usando arquivo.
+6. Criar testes simples para as funcoes de logica do jogo.
 
-Condição de vitória:
+## Escopo minimo para a entrega final
 
-> Escreva aqui.
+O escopo minimo da entrega final sera um jogo funcional em Pygame contendo janela principal funcionando, alvo aparecendo na tela, clique do mouse funcionando, pontuacao sendo atualizada, sistema de vidas, tempo limite, condicao de vitoria, condicao de derrota, recorde salvo em arquivo, codigo organizado em funcoes, README preenchido, proposta inicial no arquivo `docs/proposta.md` e testes simples implementados.
 
-## 8. Condição de derrota ou encerramento
-
-Explique como o jogador perde ou quando a partida termina.
-
-Exemplos:
-
-- perder todas as vidas;
-- acabar o tempo;
-- colidir com determinado obstáculo;
-- errar muitas perguntas;
-- deixar a bola cair, no caso de Breakout ou Pong.
-
-Condição de derrota ou encerramento:
-
-> Escreva aqui.
-
-## 9. Elementos previstos no jogo
-
-Descreva os principais elementos que farão parte do jogo.
-
-## Jogador ou elemento principal
-
-Exemplo:
-
-> Um personagem controlado pelas setas do teclado.
-
-Descrição:
-
-> Escreva aqui.
-
-## Obstáculos, inimigos ou desafios
-
-Exemplo:
-
-> Obstáculos aparecem em posições aleatórias e devem ser evitados.
-
-Descrição:
-
-> Escreva aqui.
-
-## Itens, alvos ou objetos de interação
-
-Exemplo:
-
-> Moedas aparecem na tela e aumentam a pontuação quando coletadas.
-
-Descrição:
-
-> Escreva aqui.
-
-## Pontuação, vidas, tempo ou progresso
-
-Exemplo:
-
-> O jogador começa com 3 vidas e ganha 10 pontos por item coletado.
-
-Descrição:
-
-> Escreva aqui.
-
-## 10. Controles previstos
-
-Informe os comandos que serão utilizados pelo jogador.
-
-Exemplo:
-
-- Seta para cima: mover para cima
-- Seta para baixo: mover para baixo
-- Seta para esquerda: mover para esquerda
-- Seta para direita: mover para direita
-- Espaço: realizar ação
-- ESC: sair do jogo
-
-Controles do grupo:
-
-- Tecla/comando:
-- Tecla/comando:
-- Tecla/comando:
-
-## 11. Organização inicial do código
-
-Explique como o grupo pretende organizar o código.
-
-Exemplo:
-
-- `main.py`: inicia o jogo;
-- `src/jogo.py`: contém o loop principal;
-- `src/config.py`: guarda configurações como tamanho da tela e cores;
-- `src/funcoes.py`: contém funções auxiliares;
-- `src/dados.py`: contém funções de leitura e escrita de arquivos.
-
-Organização planejada:
-
-> Escreva aqui.
-
-
-## 12. Recursos externos previstos
-
-Informe se o grupo pretende utilizar imagens, sons, fontes, tutoriais ou códigos externos.
-
-Exemplo:
-
-- imagens obtidas de banco gratuito;
-- sons gratuitos;
-- tutorial usado apenas como referência;
-- fonte personalizada.
-
-Recursos previstos:
-
-> Escreva aqui.
-
-Caso não pretenda utilizar recursos externos, escreva:
-
-> Não pretendemos utilizar recursos externos.
-
-## 13. Principais dificuldades esperadas
-
-Liste as dificuldades que o grupo acredita que poderá enfrentar.
-
-Exemplos:
-
-- movimentação do jogador;
-- colisão entre objetos;
-- controle de tempo;
-- criação do ranking;
-- organização do código;
-- uso do GitHub;
-- testes;
-- exibição de textos na tela.
-
-Dificuldades previstas:
-
-- Dificuldade 1:
-- Dificuldade 2:
-- Dificuldade 3:
-
-## 14. Escopo mínimo para a entrega final
-
-Descreva qual será a versão mínima aceitável do jogo.
-
-Esta seção é importante para evitar que o grupo escolha uma ideia grande demais.
-
-Exemplo:
-
-> A versão mínima do jogo terá um personagem controlado pelo teclado, obstáculos aparecendo na tela, sistema de vidas, sistema de pontuação e tela de fim de jogo.
-
-Escopo mínimo:
-
-> Escreva aqui.
-
-## 15. Possíveis melhorias, caso haja tempo
-
-Liste funcionalidades extras que o grupo poderá implementar se conseguir concluir o escopo mínimo.
-
-Exemplos:
-
-- tela inicial;
-- sons;
-- fases;
-- aumento de dificuldade;
-- ranking;
-- animações;
-- novos tipos de obstáculos;
-- diferentes personagens;
-- menu de pausa.
-
-Melhorias possíveis:
-
-- Melhoria 1:
-- Melhoria 2:
-- Melhoria 3:
+Caso sobre tempo, o grupo podera adicionar melhorias, como sons, tela inicial mais bonita, aumento progressivo de dificuldade, efeitos visuais simples e ranking com mais de uma pontuacao.
