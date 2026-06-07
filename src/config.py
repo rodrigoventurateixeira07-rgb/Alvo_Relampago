@@ -1,13 +1,21 @@
-# Configurações centrais do jogo (tela, cores e caminhos de arquivos).
+# Configuracoes centrais do jogo.
 LARGURA_TELA = 800
 ALTURA_TELA = 600
 FPS = 60
 
-TITULO_JOGO = "Projeto Final - Pygame"
+TITULO_JOGO = "Alvo Relampago"
 
 BRANCO = (255, 255, 255)
 PRETO = (0, 0, 0)
-CINZA = (212,212,212)
+CINZA = (224, 229, 236)
+VERMELHO = (220, 45, 45)
+VERMELHO_ESCURO = (145, 22, 22)
+AZUL = (34, 92, 172)
+
+RAIO_ALVO = 35
+MARGEM_ALVO = RAIO_ALVO + 15
+VIDAS_INICIAIS = 3
+PONTOS_POR_ACERTO = 1
 
 CAMINHO_RECORDE = "data/recorde.txt"
 CAMINHO_SPRITES = "assets/imagens/spritesheet.bmp"
