@@ -10,13 +10,11 @@ from src.config import (
     CINZA,
     FPS,
     LARGURA_TELA,
-    PONTOS_PARA_VENCER,
     PONTOS_POR_ACERTO,
     PRETO,
     RAIO_ALVO,
     TEMPO_LIMITE,
     TITULO_JOGO,
-    VERDE,
     VERMELHO,
     VERMELHO_ESCURO,
     VIDAS_INICIAIS,
@@ -24,11 +22,11 @@ from src.config import (
 from src.dados import carregar_recorde, salvar_recorde
 from src.funcoes import (
     atualizar_recorde,
+    calcular_nivel,
     calcular_pontos,
     calcular_tempo_restante,
     clique_acertou_alvo,
     jogador_perdeu,
-    jogador_venceu,
     tempo_acabou,
     tomar_dano,
 )
@@ -57,24 +55,25 @@ def desenhar_alvo(tela, alvo_x, alvo_y):
 
 
 def desenhar_informacoes(tela, fonte, pontos, vidas, tempo_restante, recorde):
-    """Desenha pontuacao, vidas, tempo e recorde."""
+    """Desenha pontuacao, vidas, tempo, recorde e nivel."""
+    nivel = calcular_nivel(pontos)
+
     desenhar_texto(tela, fonte, "Pontos: " + str(pontos), PRETO, 20, 20)
     desenhar_texto(tela, fonte, "Vidas: " + str(vidas), PRETO, 190, 20)
     desenhar_texto(tela, fonte, "Tempo: " + str(tempo_restante), PRETO, 330, 20)
     desenhar_texto(tela, fonte, "Recorde: " + str(recorde), PRETO, 500, 20)
+    desenhar_texto(tela, fonte, "Nivel: " + nivel, AZUL, 20, 55)
 
 
 def desenhar_tela_final(tela, fonte_grande, fonte, mensagem, pontos):
     """Mostra a tela de vitoria ou derrota."""
-    if mensagem == "Voce venceu!":
-        cor = VERDE
-    else:
-        cor = VERMELHO_ESCURO
+    nivel = calcular_nivel(pontos)
 
-    desenhar_texto(tela, fonte_grande, mensagem, cor, 250, 235)
+    desenhar_texto(tela, fonte_grande, mensagem, VERMELHO_ESCURO, 250, 235)
     desenhar_texto(tela, fonte, "Pontuacao final: " + str(pontos), PRETO, 285, 305)
-    desenhar_texto(tela, fonte, "Pressione ESPACO para jogar novamente", AZUL, 200, 355)
-    desenhar_texto(tela, fonte, "Pressione ESC para sair", AZUL, 280, 395)
+    desenhar_texto(tela, fonte, "Nivel final: " + nivel, PRETO, 305, 345)
+    desenhar_texto(tela, fonte, "Pressione ESPACO para jogar novamente", AZUL, 200, 390)
+    desenhar_texto(tela, fonte, "Pressione ESC para sair", AZUL, 280, 430)
 
 
 def reiniciar_partida():
@@ -91,9 +90,6 @@ def reiniciar_partida():
 
 def verificar_fim_da_partida(pontos, vidas, tempo_restante):
     """Verifica se a partida acabou."""
-    if jogador_venceu(pontos, PONTOS_PARA_VENCER):
-        return False, "Voce venceu!"
-
     if jogador_perdeu(vidas):
         return False, "Fim de jogo"
 

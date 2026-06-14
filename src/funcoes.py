@@ -13,16 +13,28 @@ def jogador_perdeu(vidas):
     return vidas <= 0
 
 
-def jogador_venceu(pontos, pontos_para_vencer):
-    """Verifica se o jogador atingiu a pontuacao de vitoria."""
-    return pontos >= pontos_para_vencer
-
-
 def atualizar_recorde(pontos, recorde):
     """Retorna o maior valor entre a pontuacao atual e o recorde."""
     if pontos > recorde:
         return pontos
     return recorde
+
+
+def calcular_nivel(pontos):
+    """Mostra o nivel do jogador de acordo com a pontuacao."""
+    if pontos < 25:
+        return "Iniciante"
+
+    if pontos < 50:
+        return "Intermediario"
+
+    if pontos < 75:
+        return "Excelente"
+
+    if pontos < 100:
+        return "Extraordinario"
+
+    return "Deus"
 
 
 def calcular_tempo_restante(tempo_limite, segundos_passados):

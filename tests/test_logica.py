@@ -1,18 +1,18 @@
 from src.dados import carregar_recorde, salvar_recorde
 from src.funcoes import (
     atualizar_recorde,
+    calcular_nivel,
     calcular_pontos,
     calcular_tempo_restante,
     clique_acertou_alvo,
     jogador_perdeu,
-    jogador_venceu,
     tempo_acabou,
     tomar_dano,
 )
 
 
 def test_calcular_pontos():
-    assert calcular_pontos(10, 1) == 11
+    assert calcular_pontos(10, 5) == 15
 
 
 def test_tomar_dano():
@@ -25,14 +25,6 @@ def test_jogador_perdeu():
 
 def test_jogador_nao_perdeu():
     assert jogador_perdeu(2) is False
-
-
-def test_jogador_venceu():
-    assert jogador_venceu(10, 10) is True
-
-
-def test_jogador_nao_venceu():
-    assert jogador_venceu(5, 10) is False
 
 
 def test_atualizar_recorde_com_pontuacao_maior():
@@ -65,6 +57,26 @@ def test_clique_acertou_alvo_no_centro():
 
 def test_clique_errou_alvo():
     assert clique_acertou_alvo((150, 100), (100, 100), 35) is False
+
+
+def test_calcular_nivel_iniciante():
+    assert calcular_nivel(0) == "Iniciante"
+
+
+def test_calcular_nivel_intermediario():
+    assert calcular_nivel(25) == "Intermediario"
+
+
+def test_calcular_nivel_excelente():
+    assert calcular_nivel(50) == "Excelente"
+
+
+def test_calcular_nivel_extraordinario():
+    assert calcular_nivel(75) == "Extraordinario"
+
+
+def test_calcular_nivel_deus():
+    assert calcular_nivel(100) == "Deus"
 
 
 def test_salvar_e_carregar_recorde(tmp_path):

@@ -13,22 +13,30 @@ Projeto final da disciplina de Introducao a Algoritmos/Programacao, desenvolvido
 
 Alvo Relampago e um jogo simples de clique rapido. Um alvo circular aparece em uma posicao aleatoria da tela, e o jogador deve clicar nele para ganhar pontos. Quando o jogador erra o alvo, perde uma vida.
 
-Na Semana 3, o jogo ganhou tempo limite, condicao de vitoria, condicao de derrota e recorde salvo em arquivo.
+Na Semana 3, o jogo ganhou tempo limite, sistema de niveis, condicao de derrota e recorde salvo em arquivo.
 
 ## Objetivo do jogador
 
-O objetivo e fazer 10 pontos antes que o tempo acabe e antes de perder todas as vidas.
+O objetivo e fazer a maior pontuacao possivel antes que o tempo acabe ou antes de perder todas as vidas.
 
 ## Regras do jogo
 
 - O jogador comeca com 3 vidas.
-- Cada clique correto no alvo aumenta 1 ponto.
+- Cada clique correto no alvo aumenta 5 pontos.
 - Cada clique fora do alvo remove 1 vida.
 - Depois de um acerto, o alvo muda para uma nova posicao aleatoria.
-- O jogador vence quando chega a 10 pontos.
 - O jogador perde se as vidas chegarem a zero.
-- O jogador tambem perde se o tempo acabar antes de atingir a pontuacao de vitoria.
+- O jogador tambem perde se o tempo acabar.
+- O jogo mostra o nivel do jogador de acordo com a pontuacao.
 - O maior recorde fica salvo em `data/recorde.txt`.
+
+## Niveis de pontuacao
+
+- 0 a 20 pontos: Iniciante.
+- 25 a 45 pontos: Intermediario.
+- 50 a 70 pontos: Excelente.
+- 75 a 95 pontos: Extraordinario.
+- 100 pontos ou mais: Deus.
 
 ## Controles
 
@@ -67,7 +75,7 @@ python -m pytest
 - Alvo clicavel aparecendo na tela.
 - Pontuacao e vidas funcionando.
 - Tempo limite funcionando.
-- Tela final de vitoria ou derrota.
+- Tela final com resultado e nivel do jogador.
 - Reinicio da partida com ESPACO.
 - Saida do jogo com ESC.
 - Recorde salvo em arquivo.

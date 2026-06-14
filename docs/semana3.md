@@ -7,9 +7,10 @@ Na Semana 3, o prototipo da Semana 2 foi melhorado com regras de partida mais co
 ## Funcionalidades
 
 - Tempo limite de 30 segundos.
-- Vitoria ao atingir 10 pontos.
 - Derrota ao perder todas as vidas.
-- Derrota quando o tempo acaba antes da vitoria.
+- Derrota quando o tempo acaba.
+- Pontuacao aumentada para 5 pontos por acerto.
+- Nivel do jogador de acordo com a pontuacao.
 - Tela final com mensagem de resultado.
 - Reinicio da partida usando a tecla ESPACO.
 - Saida do jogo usando a tecla ESC.
@@ -21,9 +22,17 @@ Na Semana 3, o prototipo da Semana 2 foi melhorado com regras de partida mais co
 1. Execute `python main.py`.
 2. Clique no alvo vermelho para ganhar pontos.
 3. Clique fora do alvo para perder vidas.
-4. Tente chegar a 10 pontos antes do tempo acabar.
+4. Tente fazer a maior pontuacao possivel antes do tempo acabar.
 5. Quando a partida terminar, pressione ESPACO para reiniciar.
 6. Pressione ESC para sair.
+
+## Niveis
+
+- 0 a 20 pontos: Iniciante.
+- 25 a 45 pontos: Intermediario.
+- 50 a 70 pontos: Excelente.
+- 75 a 95 pontos: Extraordinario.
+- 100 pontos ou mais: Deus.
 
 ## Como testar automaticamente
 
