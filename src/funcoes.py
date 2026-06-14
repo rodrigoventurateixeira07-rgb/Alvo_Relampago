@@ -22,16 +22,16 @@ def atualizar_recorde(pontos, recorde):
 
 def calcular_nivel(pontos):
     """Mostra o nivel do jogador de acordo com a pontuacao."""
-    if pontos < 25:
+    if pontos < 100:
         return "Iniciante"
 
-    if pontos < 50:
+    if pontos < 250:
         return "Intermediario"
 
-    if pontos < 75:
+    if pontos < 400:
         return "Excelente"
 
-    if pontos < 100:
+    if pontos < 600:
         return "Extraordinario"
 
     return "Deus"

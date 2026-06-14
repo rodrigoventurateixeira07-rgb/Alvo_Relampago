@@ -64,19 +64,19 @@ def test_calcular_nivel_iniciante():
 
 
 def test_calcular_nivel_intermediario():
-    assert calcular_nivel(25) == "Intermediario"
+    assert calcular_nivel(100) == "Intermediario"
 
 
 def test_calcular_nivel_excelente():
-    assert calcular_nivel(50) == "Excelente"
+    assert calcular_nivel(250) == "Excelente"
 
 
 def test_calcular_nivel_extraordinario():
-    assert calcular_nivel(75) == "Extraordinario"
+    assert calcular_nivel(400) == "Extraordinario"
 
 
 def test_calcular_nivel_deus():
-    assert calcular_nivel(100) == "Deus"
+    assert calcular_nivel(600) == "Deus"
 
 
 def test_salvar_e_carregar_recorde(tmp_path):

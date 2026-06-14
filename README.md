@@ -32,11 +32,11 @@ O objetivo e fazer a maior pontuacao possivel antes que o tempo acabe ou antes d
 
 ## Niveis de pontuacao
 
-- 0 a 20 pontos: Iniciante.
-- 25 a 45 pontos: Intermediario.
-- 50 a 70 pontos: Excelente.
-- 75 a 95 pontos: Extraordinario.
-- 100 pontos ou mais: Deus.
+- 0 a 95 pontos: Iniciante.
+- 100 a 245 pontos: Intermediario.
+- 250 a 395 pontos: Excelente.
+- 400 a 595 pontos: Extraordinario.
+- 600 pontos ou mais: Deus.
 
 ## Controles
 
