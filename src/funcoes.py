@@ -1,36 +1,54 @@
 def calcular_pontos(pontos_atual, pontos_ganhos):
-    """Soma os pontos ganhos a pontuacao atual."""
+    """Soma os pontos ganhos com a pontuacao atual."""
     return pontos_atual + pontos_ganhos
 
 
-def tomar_dano(vida_atual, dano):
-    """Reduz a vida atual com base no dano recebido."""
-    return vida_atual - dano
+def tomar_dano(vidas, dano):
+    """Tira vidas do jogador."""
+    return vidas - dano
 
 
 def jogador_perdeu(vidas):
-    """Indica se o jogador ficou sem vidas."""
+    """Verifica se o jogador perdeu todas as vidas."""
     return vidas <= 0
 
 
-def limitar_valor(valor, minimo, maximo):
-    """Mantem um valor dentro do intervalo [minimo, maximo]."""
-    if valor < minimo:
-        return minimo
-    if valor > maximo:
-        return maximo
-    return valor
+def jogador_venceu(pontos, pontos_para_vencer):
+    """Verifica se o jogador atingiu a pontuacao de vitoria."""
+    return pontos >= pontos_para_vencer
+
+
+def atualizar_recorde(pontos, recorde):
+    """Retorna o maior valor entre a pontuacao atual e o recorde."""
+    if pontos > recorde:
+        return pontos
+    return recorde
+
+
+def calcular_tempo_restante(tempo_limite, segundos_passados):
+    """Calcula quanto tempo ainda falta para acabar a partida."""
+    tempo_restante = tempo_limite - segundos_passados
+
+    if tempo_restante < 0:
+        return 0
+
+    return tempo_restante
+
+
+def tempo_acabou(tempo_restante):
+    """Verifica se o tempo chegou a zero."""
+    return tempo_restante <= 0
 
 
 def clique_acertou_alvo(posicao_clique, posicao_alvo, raio_alvo):
-    """Verifica se uma posicao clicada esta dentro do circulo do alvo."""
-    distancia_x = posicao_clique[0] - posicao_alvo[0]
-    distancia_y = posicao_clique[1] - posicao_alvo[1]
-    distancia_quadrada = distancia_x**2 + distancia_y**2
+    """Verifica se o clique do mouse acertou o alvo circular."""
+    clique_x = posicao_clique[0]
+    clique_y = posicao_clique[1]
+    alvo_x = posicao_alvo[0]
+    alvo_y = posicao_alvo[1]
 
-    return distancia_quadrada <= raio_alvo**2
+    distancia_x = clique_x - alvo_x
+    distancia_y = clique_y - alvo_y
+    distancia = (distancia_x**2 + distancia_y**2) ** 0.5
 
-
-def verificar_colisao(retangulo_1, retangulo_2):
-    """Verifica sobreposicao entre dois retangulos do Pygame."""
-    return retangulo_1.colliderect(retangulo_2)
+    return distancia <= raio_alvo

@@ -1,4 +1,4 @@
-# Configuracoes centrais do jogo.
+# Configuracoes principais do jogo.
 LARGURA_TELA = 800
 ALTURA_TELA = 600
 FPS = 60
@@ -11,11 +11,13 @@ CINZA = (224, 229, 236)
 VERMELHO = (220, 45, 45)
 VERMELHO_ESCURO = (145, 22, 22)
 AZUL = (34, 92, 172)
+VERDE = (30, 140, 80)
 
 RAIO_ALVO = 35
-MARGEM_ALVO = RAIO_ALVO + 15
 VIDAS_INICIAIS = 3
 PONTOS_POR_ACERTO = 1
 
+TEMPO_LIMITE = 30
+PONTOS_PARA_VENCER = 10
+
 CAMINHO_RECORDE = "data/recorde.txt"
-CAMINHO_SPRITES = "assets/imagens/spritesheet.bmp"
